@@ -41,7 +41,7 @@ public class ShipmentService {
                     total += pricingService.calculateInsurance(totalValue, hazardous, shipment.getCustomer());
 
                     shipment.setTotal(total);
-                    shipment.setStatus("READY");
+                    shipment.setStatus(ShipmentStatus.READY);
                     String output;
                     if (total > 2000) {
                         output = "PRIORITY | " + shipment.getReference() + " | " + String.format("%.2f", total);
